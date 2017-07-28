@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>editnew</title>
+</head>
+<body>
+    <div> 
+        @{ WebApplication3.Models.Employee em = (WebApplication3.Models.Employee)ViewData["em"];}
+        <form action="/Employee/modify" method="post">
+            First Name:<input type="text" name="firstname" value="@em.firstname" /><br />
+            @Html.ValidationMessage("firstname")
+            Last Name:<input type="text" name="lastname" value="@em.lastname" /><br />
+            Salary: <input type="text" name="Salary" value="@em.salary" /><br />
+            <input type="hidden" name="id" value="@em.id" />
+            <input type="submit" name="BtnSave" value="修改保存" />
+            <input type="button" name="BtnReset" value="返回列表" onclick="javascript:location.href='/employee/listview'" />
+
+            </form>
+</div>
+</body>
+</html>

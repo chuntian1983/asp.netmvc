@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetView</title>
+</head>
+<body>
+    <div> 
+        @{ 
+            WebApplication3.Models.Employee em = (WebApplication3.Models.Employee)ViewData["Employee"];
+        }
+        hello world! welcome asp.net mvc
+        <br />
+        <b>详细内容</b>
+       
+        <br />
+        姓名：@em.firstname@em.lastname<br />
+
+        <span style="background-color:blue;color:red;">
+            薪水：@em.salary
+        </span>
+    </div>
+</body>
+</html>

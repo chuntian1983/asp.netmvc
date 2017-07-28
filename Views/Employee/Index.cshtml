@@ -1,0 +1,57 @@
+﻿@model WebApplication3.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h4>Employee</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.firstname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.firstname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.lastname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.lastname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.salary)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.salary)
+            </dd>
+    
+        </dl>
+    </div>
+   
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")*@
+    </p>
+</body>
+</html>

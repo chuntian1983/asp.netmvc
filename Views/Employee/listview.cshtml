@@ -1,0 +1,38 @@
+﻿@using WebApplication3.ViewModels
+@using WebApplication3.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>listview</title>
+</head>
+<body>
+    <div> 
+        <a href="/Employee/AddNew">添加信息</a>
+        <table>
+            @{
+                List<Employee> strlist =(List<Employee>) ViewData["strlist"];
+                
+            }
+            <tr><td>firstname</td><td>lastname</td><td>salary</td></tr>
+            @foreach (Employee em  in strlist)
+            {
+
+
+            <tr>
+                <td>@em.firstname</td>
+                <td>@em.lastname</td>
+                <td>@em.salary</td>
+                <td><a href="/employee/editnew/@em.id">编辑</a></td>
+                <td><a href="/employee/del/@em.id" onclick="return confirm('您确认要删除吗？')">删除</a></td>
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
